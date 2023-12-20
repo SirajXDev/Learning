@@ -61,14 +61,7 @@ class MyApp extends StatelessWidget {
         ),
         
         useMaterial3: true,
-        // fontFamily: family,
-        // textTheme: const TextTheme(
-        //   bodyMedium: TextStyle(
-        //     fontSize: 30,
-        //     color: Color.fromARGB(255, 1, 47, 85),
-        //     fontWeight: FontWeight.w800,
-        //   ),
-        // ),
+        
       ),
       home: const DialougesInFlutter(),
     );
