@@ -26,7 +26,7 @@ class ListViewScreeen extends StatelessWidget {
               trailing: Text(students[index].marks.toString()),
               contentPadding: const EdgeInsets.all(15),
               onTap: () {
-                print('Card Tapperd ${students[index].name}');
+                debugPrint('Card Tapperd ${students[index].name}');
               },
               textColor: Colors.red,
               // tileColor: Colors.green.withOpacity(0.4),

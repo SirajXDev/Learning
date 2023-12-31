@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+
+
 
 class DialougesInFlutter extends StatefulWidget {
   const DialougesInFlutter({super.key});
@@ -10,7 +12,7 @@ class DialougesInFlutter extends StatefulWidget {
 
 class _DialougesInFlutterState extends State<DialougesInFlutter>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
+  // late AnimationController _controller;
 
   // DateTime? _dateTime = DateTime(2000,5,25,20,59);
   DateTime? _date = DateTime.now();
@@ -18,12 +20,13 @@ class _DialougesInFlutterState extends State<DialougesInFlutter>
     hour: 12,
     minute: 55,
   );
+  String? value = 'This is String Value';
 
   @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(vsync: this);
-  }
+  // void initState() {
+  //   super.initState();
+  //   _controller = AnimationController(vsync: this);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +106,56 @@ class _DialougesInFlutterState extends State<DialougesInFlutter>
               },
               child: const Text('Time Date'),
             ),
-           
+            const Divider(),
+            Text(value ?? ''),
+            ElevatedButton(
+              onPressed: () {
+                showAdaptiveDialog(
+                  context: context,
+                  builder: (context) => AlertDialog.adaptive(
+                    title: const Text('Change Value'),
+                    // titlePadding: EdgeInsets.all(100),
+                    titleTextStyle: const TextStyle(
+                        color: Colors.red,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                    contentTextStyle: const TextStyle(
+                      color: Colors.red,
+                    ),
+                    actionsAlignment: MainAxisAlignment.start,
+                    content:
+                        const Text('Are you Sure to change the value of Strin'),
+                    insetAnimationCurve: Curves.easeIn,
+                    icon: const Icon(Icons.chair),
+                    shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadius.circular(50)),
+                    shadowColor: Colors.red,
+
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: const Text('Cancel'),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          value = 'Value has been changed';
+                          setState(() {});
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(Icons.change_circle),
+                      )
+                    ],
+                  ),
+                );
+              },
+              child: const Text('Show Dialouge'),
+            ),
+            TextButton(
+              onPressed: () {
+     
+              },
+              child: const Text('show toast'),
+            )
           ],
         ),
       ),

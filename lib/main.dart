@@ -3,6 +3,8 @@
 //import 'package:fifi/screens/row_columns.dart';
 //import 'package:fifi/screens/text_fields_screen.dart';
 import 'package:fifi/screens/dialouges/dialoges_f.dart';
+import 'package:fifi/screens/page_view.dart';
+import 'package:fifi/screens/tab_bar_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -52,18 +54,18 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        dialogBackgroundColor: Colors.amber,
+        // dialogBackgroundColor: Colors.amber,
         datePickerTheme: DatePickerThemeData(
           // backgroundColor: Colors.amber,
           headerBackgroundColor: Colors.brown,
-          headerHeadlineStyle: TextStyle(color: Colors.green,fontSize: 40),
+          headerHeadlineStyle: const TextStyle(color: Colors.green,fontSize: 40),
           shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(10))
         ),
         
         useMaterial3: true,
         
       ),
-      home: const DialougesInFlutter(),
+      home: const TabBarScreen(),
     );
   }
 }

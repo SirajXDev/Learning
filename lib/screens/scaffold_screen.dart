@@ -58,23 +58,18 @@ class _ScaffoldStatfulState extends State<ScaffoldStatful> {
   // String vall;
   @override
   void initState() {
-    // TODO: implement initState
+    
     super.initState();
     val = '';
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
+   
     super.dispose();
   }
 
-  @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-  }
-
+ 
   @override
   Widget build(BuildContext context) {
     print('Build Method Recall');
